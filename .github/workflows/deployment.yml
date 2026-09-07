@@ -15,6 +15,7 @@ jobs:
       - name: run test
         run: npm test
   deploy: 
+    needs: [test,]
     runs-on: ubunto-latest
     steps: 
       - name: get code download from repo
@@ -29,4 +30,3 @@ jobs:
         run: npm run build
       - name: deploy
         run: echo "deploying"
-        
